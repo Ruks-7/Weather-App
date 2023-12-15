@@ -13,9 +13,9 @@
 <body>
   <div class="weather-app">
   <header>
-    <form class="search-form">
-      <input class="entry" type="search" placeholder="Enter a city..." required>
-      <input class="submit-button" type="submit" value="Search">
+    <form id="inquiry-form" class="search-form">
+      <input id="entry-search" class="entry" type="search" placeholder="Enter a city..." required>
+      <input id="search-button" class="submit-button" type="submit" value="Search">
     </form>
   </header>
 
@@ -25,8 +25,11 @@
 
   <div class="details">
   <p class="weather-info">
-    Tuesday, 18:38, moderate rain <br/>
-    Humidity: 56%, Wind: 5.27km/h
+    <span class="day">Tuesday</span>, 
+    <span class="time">18:38</span>, moderate rain <br/>
+    Humidity: 
+    <span class="percentage">56%</span>, Wind: 
+    <span class="windspeed">5.27km/h</span>
   </p>
   
    <div class="weather-degree">
@@ -45,5 +48,9 @@
      <a href="https://weather-application-rukwaro.netlify.app" target="_blank">Netlify</a>
   </footer>
 </div>
+
+<script src="src/script.js">
+
+</script>
 </body>
 </html>

@@ -51,7 +51,11 @@ h1{
 .weather-info{
   font-size: 18px;
 }
-
+.percentage, 
+.windspeed, 
+.time{
+  color: rgba(85, 94, 34, 0.73);
+}
 .details{
   padding: 2px 0 20px 0;
   display: flex;
