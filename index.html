@@ -4,27 +4,38 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>☁Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Courgette&family=PT+Sans&family=Roboto&family=Ubuntu&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
+  <div class="weather-app">
   <header>
-    <form>
-      <input type="search" placeholder="Enter a city..." required>
-      <input type="submit" value="Search">
+    <form class="search-form">
+      <input class="entry" type="search" placeholder="Enter a city..." required>
+      <input class="submit-button" type="submit" value="Search">
     </form>
   </header>
 
-  <h1>
+  <h1 class="city">
     Paris
   </h1>
 
-  <div>
-  <p>
+  <div class="details">
+  <p class="weather-info">
     Tuesday, 18:38, moderate rain <br/>
-    Humidity: 56%, wind: 5.27km/h
+    Humidity: 56%, Wind: 5.27km/h
   </p>
-   ⛅12°C
-  </div>
   
+   <div class="weather-degree">
+   <div class="icon">⛅</div>
+   <div class="degree">12</div>
+   <div class="unit">°C</div>
+   </div>
+  </div>
+
   <footer>
     This project was coded by 
     <a href="https://github.com/Ruks-7" target="_blank">Irene Rukwaro</a>
@@ -33,5 +44,6 @@
      hosted on 
      <a href="https://weather-application-rukwaro.netlify.app" target="_blank">Netlify</a>
   </footer>
+</div>
 </body>
 </html>
