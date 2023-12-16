@@ -5,7 +5,7 @@ body{
 .weather-app{
   border-radius: 6px;
   max-width: 600px;
-  margin: 30px auto ;
+  margin: 60px auto ;
   padding: 15px;
   background-color: white;
   
@@ -67,14 +67,13 @@ h1{
 
 .icon{
   font-size: 35px;
-  margin-top: -14px;
+  margin-top: -36px;
 }
 
 .degree{
   margin-top: -40px;
   font-size: 80px;
   font-weight: bold;
-  margin-left: 8px;
 }
 
 .unit{
