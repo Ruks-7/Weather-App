@@ -51,3 +51,22 @@ function displayTime(info){
 
   return `${hours}:${minutes}`;
 }
+
+function displayForecast(){
+let forecast=document.querySelector("#forecast");
+let days=["Tue", "Wed", "Thur", "Fri", "Sat"];
+let forecastHtml= "";
+
+days.forEach( function (day){
+forecastHtml +=
+ `<div class="forecast-details">
+    ${day} <br />
+    🌦 <br />
+    <span class="max-temp">17°C</span>
+    <span class="min-temp">12°C</span>
+  </div>` }
+);
+forecast.innerHTML=forecastHtml;
+}
+
+displayForecast();
