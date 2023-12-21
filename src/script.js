@@ -1,3 +1,4 @@
+
 function weatherCity(event){
   event.preventDefault();
   let cityInput=document.querySelector("#entry-search");
@@ -15,6 +16,10 @@ function apiSearch(city){
 apiSearch("Nairobi"); //default city with correct temperature
 
 function displayWeather(response){
+  if(response.data.city===undefined){
+    alert("Enter a valid city!");
+    preventDefault();
+  }
   let city=document.querySelector("h1");
   city.innerHTML=response.data.city;
   let degree=document.querySelector("#degree");
@@ -36,6 +41,8 @@ function displayWeather(response){
 
   let time=document.querySelector("#time");
   time.innerHTML=displayTime(date);
+
+  forecastApi(response.data.city);
 }
 
 function displayDay(info){
@@ -52,21 +59,37 @@ function displayTime(info){
   return `${hours}:${minutes}`;
 }
 
-function displayForecast(){
-let forecast=document.querySelector("#forecast");
-let days=["Tue", "Wed", "Thur", "Fri", "Sat"];
-let forecastHtml= "";
+function forecastApi(city){
+let apiKey= "2a73b3dbc21aoe20a5dfta3e447dfa66";
+let apiUrl=`https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;  
 
-days.forEach( function (day){
+axios.get(apiUrl).then(displayForecast);
+}
+
+function findDay(time){
+ let date=new Date(time*1000);
+ let days=["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"];
+ return days[date.getDay()];
+}
+
+function displayForecast(response){
+let forecast=document.querySelector("#forecast");
+let forecastHtml= ""; //concatenation of a string
+console.log(response);
+
+response.data.daily.forEach( function (day, index){
+if(index <5){
 forecastHtml +=
  `<div class="forecast-details">
-    ${day} <br />
-    🌦 <br />
-    <span class="max-temp">17°C</span>
-    <span class="min-temp">12°C</span>
+    ${findDay(day.time)} <br />
+    <img class="weather-icon" src=${day.condition.icon_url}> <br />
+    <span class="max-temp">${Math.round(day.temperature.maximum)}°</span> 
+    <span class="min-temp">${Math.round(day.temperature.minimum)}°</span>
   </div>` }
+}
 );
 forecast.innerHTML=forecastHtml;
 }
 
-displayForecast();
+
+

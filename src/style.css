@@ -3,12 +3,13 @@ body{
   font-family: 'Roboto', sans-serif;
   color: rgb(10, 96, 161);
 }
+
 .weather-app{
   border-radius: 6px;
   max-width: 600px;
   margin: 60px auto ;
   padding: 15px;
-  background-color: white;
+  background-color: transparent;
   box-shadow: 4px 4px 4px 4px rgba(132, 177, 197, 0.73);
 }
 
@@ -23,7 +24,7 @@ a{
   border-radius: 4px;
   background-color: rgb(238, 246, 252);
   font-size: 17px;
-
+  outline: none;
 }
 
 .submit-button{
@@ -31,7 +32,7 @@ a{
   padding: 14px 20px;
   font-size: 16px;
   background-color:rgb(238, 246, 252);
-  border: 1px solid rgb(238, 246, 252);
+  border: none;
   border-radius: 6px;
   color: rgb(129, 138, 145);
 }
@@ -55,6 +56,11 @@ h1{
 .weather-info{
   font-size: 18px;
 }
+
+.weather-description{
+font-weight: bold;
+}
+
 .percentage, 
 .windspeed, 
 .time{
@@ -93,12 +99,14 @@ h1{
 
 .forecast-details{
   text-align: center;
-    color: black;
-    font-weight: bold;
-    margin-bottom: 10px;
-    background-color: rgb(252, 245, 245);
-    max-width: 200px;
-    padding: 10px;
+  color: black;
+  font-weight: bold;
+  margin-bottom: 20px;   
+  font-size: 17px;
+}
+
+.weather-icon{
+  width: 60%;
 }
 
 .min-temp{
@@ -111,4 +119,5 @@ footer{
   text-align: center;
   font-size: 16px;
   color: black;
+  opacity: 0.8;
 }
