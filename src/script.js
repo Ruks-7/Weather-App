@@ -17,7 +17,7 @@ apiSearch("Nairobi"); //default city with correct temperature
 
 function displayWeather(response){
   if(response.data.city===undefined){
-    alert("Enter a valid city!");
+    alert("Undefined place! Try another one");
     preventDefault();
   }
   let city=document.querySelector("h1");
